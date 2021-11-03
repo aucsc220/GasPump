@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">GasPump</string>
+    <string name="regular_mess">Regular\n Grade</string>
+    <string name="mid_grade_mess"> Mid\nGrade</string>
+    <string name="premium_mess">Premium\n Grade</string>
+    <string name="fill_mess">Fill up your tank</string>
+    <string name="dollar_sign">$</string>
+    <string name="price_mess">Price</string>
+    <string name="actCost_mess">0000.00</string>
+    <string name="litres_mess">Litres</string>
+    <string name="actLit_mess">000.0</string>
 </resources>

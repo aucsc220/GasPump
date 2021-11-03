@@ -14,9 +14,10 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.497"
         app:srcCompat="@drawable/blue_gas_pump" />
 
     <ImageView
@@ -72,40 +73,139 @@
         app:layout_constraintVertical_bias="0.355" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/regGradeLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:layout_marginTop="208dp"
         android:layout_marginBottom="24dp"
-        android:text="Regular\n Grade"
+        android:text="@string/regular_mess"
         app:layout_constraintBottom_toTopOf="@+id/regularButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/midGradeLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginTop="208dp"
         android:layout_marginBottom="24dp"
-        android:text=" Mid\nGrade"
+        android:text="@string/mid_grade_mess"
         app:layout_constraintBottom_toTopOf="@+id/midGradeButton"
-        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/regGradeLabel"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/premGradeLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="208dp"
         android:layout_marginBottom="24dp"
-        android:text="Premium\n  Grade"
+        android:text="@string/premium_mess"
         app:layout_constraintBottom_toTopOf="@+id/premiumButton"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@+id/midGradeLabel"
         app:layout_constraintTop_toTopOf="parent" />
 
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="529dp" />
+
+
+    <TextView
+        android:id="@+id/fillTankTV"
+        android:layout_width="181dp"
+        android:layout_height="162dp"
+        android:layout_marginEnd="88dp"
+        android:text="@string/fill_mess"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.73" />
+
+    <TextView
+        android:id="@+id/totalPriceTV"
+        android:layout_width="91dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="56dp"
+        android:text="@string/price_mess"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <TextView
+        android:id="@+id/dollarSignTV"
+        android:layout_width="30dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:text="@string/dollar_sign"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/actCostTV"
+        app:layout_constraintHorizontal_bias="0.782"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+    <TextView
+        android:id="@+id/actCostTV"
+        android:layout_width="111dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:text="@string/actCost_mess"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.604"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+    <TextView
+        android:id="@+id/litresTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:text="@string/litres_mess"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/totalPriceTV"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="187dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="589dp" />
+
+    <TextView
+        android:id="@+id/actLitresTX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:text="@string/actLit_mess"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.569"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
 </androidx.constraintlayout.widget.ConstraintLayout>
