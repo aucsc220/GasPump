@@ -113,14 +113,16 @@ public class MainActivity extends AppCompatActivity {
         Button midGradeButton = (Button) findViewById(R.id.midGradeButton);
         Button premiumButton = (Button) findViewById(R.id.premiumButton);
 
+        //Highlight regular button
         regButton.setBackgroundColor(getResources().getColor(R.color.purple_500));
         midGradeButton.setBackgroundColor(getResources().getColor(R.color.purple_200));
         premiumButton.setBackgroundColor(getResources().getColor(R.color.purple_200));
 
+        //Change controlling instance variables
         costPerLitre = Double.parseDouble(getResources().getString(R.string.regular_price));
         gasTypeSelected = true;
 
-        //update price
+        //update litres and price
         TextView numLitresTV = (TextView) findViewById(R.id.actLitresTV);
         TextView actCostTV = (TextView) findViewById(R.id.actCostTV);
         numLitresTV.setText(String.format("%6.1f", progressOfFill));
@@ -138,14 +140,16 @@ public class MainActivity extends AppCompatActivity {
         Button regButton = (Button) findViewById(R.id.regularButton);
         Button premiumButton = (Button) findViewById(R.id.premiumButton);
 
+        //Highlight mid grade button
         midButton.setBackgroundColor(getResources().getColor(R.color.purple_500));
         regButton.setBackgroundColor(getResources().getColor(R.color.purple_200));
         premiumButton.setBackgroundColor(getResources().getColor(R.color.purple_200));
 
+        //Change controlling instance variables
         costPerLitre = Double.parseDouble(getResources().getString(R.string.mid_grad_price));
         gasTypeSelected = true;
 
-        //update price
+        //update litres and price
         TextView numLitresTV = (TextView) findViewById(R.id.actLitresTV);
         TextView actCostTV = (TextView) findViewById(R.id.actCostTV);
         numLitresTV.setText(String.format("%6.1f", progressOfFill));
@@ -163,14 +167,16 @@ public class MainActivity extends AppCompatActivity {
         Button regButton = (Button) findViewById(R.id.regularButton);
         Button midGradeButton = (Button) findViewById(R.id.midGradeButton);
 
+        //Highlight premium grade button
         premiumButton.setBackgroundColor(getResources().getColor(R.color.purple_500));
         regButton.setBackgroundColor(getResources().getColor(R.color.purple_200));
         midGradeButton.setBackgroundColor(getResources().getColor(R.color.purple_200));
 
+        //Change controlling instance variables
         costPerLitre = Double.parseDouble(getResources().getString(R.string.premium_price));
         gasTypeSelected = true;
 
-        //update price
+        //update litres and price
         TextView numLitresTV = (TextView) findViewById(R.id.actLitresTV);
         TextView actCostTV = (TextView) findViewById(R.id.actCostTV);
         numLitresTV.setText(String.format("%6.1f", progressOfFill));
