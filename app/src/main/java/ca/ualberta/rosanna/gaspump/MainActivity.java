@@ -38,15 +38,17 @@ public class MainActivity extends AppCompatActivity {
                                     (progress * costPerLitre / 100.0)));
                         }
                         else {
-                            Toast.makeText(MainActivity.this, "Pick a type of gas",
-                                    Toast.LENGTH_SHORT).show();
+                            //empty for now
                         }
                         progressOfFill = progress; //Move to instance variable, to track
                     }//onProgressChanged
 
                     @Override
                     public void onStartTrackingTouch(SeekBar seekBar) {
-                        //empty on purpose
+                        if (!gasTypeSelected){ //Put toast here so it disappears faster
+                            Toast.makeText(MainActivity.this, "Pick a type of gas",
+                                    Toast.LENGTH_SHORT).show();
+                        }
                     }
 
                     @Override
