@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  This is the ONLY place gas prices are stored.
+  Created for an assignment in AUCSC 220.
+  by R. Heise
+  November 2021
+-->
 <resources>
     <string name="regular_price">139.9</string>
     <string name="mid_grad_price">144.9</string>
