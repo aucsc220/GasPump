@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="regular_price">139.9</string>
+    <string name="mid_grad_price">144.9</string>
+    <string name="premium_price">149.9</string>
+</resources>

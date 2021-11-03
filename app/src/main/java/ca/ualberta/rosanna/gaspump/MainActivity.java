@@ -12,9 +12,6 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private double REG_COST_P_L = 139.9;
-    private double MIDGRADE_COST_P_L = 144.9;
-    private double PREMIUM_COST_P_L = 149.9;
     private boolean gasTypeSelected = false; //Start with no gas type selected
     private double costPerLitre = 00.0; //Nothing selected yet so don't know cost at start
     private int numLitres = 0; //Nothing pumped
@@ -45,18 +42,20 @@ public class MainActivity extends AppCompatActivity {
                                     Toast.LENGTH_SHORT).show();
                         }
                         progressOfFill = progress; //Move to instance variable, to track
-                    }
+                    }//onProgressChanged
 
                     @Override
                     public void onStartTrackingTouch(SeekBar seekBar) {
+                        //empty on purpose
                     }
 
                     @Override
                     public void onStopTrackingTouch(SeekBar seekBar) {
+                        //empty on purpose
                     }
                 }
-        );
-    }
+        );//setOnSeekBarChangeListener
+    }//onCreate
 
     /**
      * Sets up the instance fields for regular gas.
@@ -74,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         midGradeButton.setBackgroundColor(getResources().getColor(R.color.purple_200));
         premiumButton.setBackgroundColor(getResources().getColor(R.color.purple_200));
 
-        costPerLitre = REG_COST_P_L;
+        costPerLitre = Double.parseDouble(getResources().getString(R.string.regular_price));
         gasTypeSelected = true;
 
         //update price
@@ -99,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
         regButton.setBackgroundColor(getResources().getColor(R.color.purple_200));
         premiumButton.setBackgroundColor(getResources().getColor(R.color.purple_200));
 
-        costPerLitre = MIDGRADE_COST_P_L;
+        costPerLitre = Double.parseDouble(getResources().getString(R.string.mid_grad_price));
         gasTypeSelected = true;
 
         //update price
@@ -124,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
         regButton.setBackgroundColor(getResources().getColor(R.color.purple_200));
         midGradeButton.setBackgroundColor(getResources().getColor(R.color.purple_200));
 
-        costPerLitre = PREMIUM_COST_P_L;
+        costPerLitre = Double.parseDouble(getResources().getString(R.string.premium_price));
         gasTypeSelected = true;
 
         //update price
