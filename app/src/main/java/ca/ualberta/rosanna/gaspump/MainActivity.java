@@ -14,8 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean gasTypeSelected = false; //Start with no gas type selected
     private double costPerLitre = 00.0; //Nothing selected yet so don't know cost at start
-    private int numLitres = 0; //Nothing pumped
-    private int progressOfFill = 0; //Used to track progress when gas type not yet selected
+    private double progressOfFill = 0; //Used to track progress when gas type not yet selected
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,18 +28,19 @@ public class MainActivity extends AppCompatActivity {
                 new SeekBar.OnSeekBarChangeListener() {
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                        progressOfFill = progress / 10; //Move to instance variable, to track
                         if (gasTypeSelected) {
                             TextView actLitTV = (TextView) findViewById(R.id.actLitresTV);
                             TextView actCostTV = (TextView) findViewById(R.id.actCostTV);
 
-                            actLitTV.setText("" + progress + ".0");
+                            actLitTV.setText(String.format("%6.1f", progressOfFill));
                             actCostTV.setText(String.format("%6.2f",
-                                    (progress * costPerLitre / 100.0)));
+                                    (progressOfFill * costPerLitre / 100.0)));
                         }
                         else {
                             //empty for now
                         }
-                        progressOfFill = progress; //Move to instance variable, to track
+
                     }//onProgressChanged
 
                     @Override
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         //update price
         TextView numLitresTV = (TextView) findViewById(R.id.actLitresTV);
         TextView actCostTV = (TextView) findViewById(R.id.actCostTV);
-        numLitresTV.setText("" + progressOfFill);
+        numLitresTV.setText(String.format("%6.1f", progressOfFill));
         actCostTV.setText(String.format("%6.2f",
                 (progressOfFill * costPerLitre / 100.0)));
     }//regGas
@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         //update price
         TextView numLitresTV = (TextView) findViewById(R.id.actLitresTV);
         TextView actCostTV = (TextView) findViewById(R.id.actCostTV);
-        numLitresTV.setText("" + progressOfFill);
+        numLitresTV.setText(String.format("%6.1f", progressOfFill));
         actCostTV.setText(String.format("%6.2f",
                 (progressOfFill * costPerLitre / 100.0)));
     }//midGradeGas
@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
         //update price
         TextView numLitresTV = (TextView) findViewById(R.id.actLitresTV);
         TextView actCostTV = (TextView) findViewById(R.id.actCostTV);
-        numLitresTV.setText("" + progressOfFill);
+        numLitresTV.setText(String.format("%6.1f", progressOfFill));
         actCostTV.setText(String.format("%6.2f",
                 (progressOfFill * costPerLitre / 100.0)));
     }//midGradeGas
