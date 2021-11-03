@@ -18,13 +18,15 @@ public class MainActivity extends AppCompatActivity {
     private boolean gasTypeSelected = false; //Start with no gas type selected
     private double costPerLitre = 00.0; //Nothing selected yet so don't know cost at start
     private int numLitres = 0; //Nothing pumped
+    private int progressOfFill = 0; //Used to track progress when gas type not yet selected
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Set up the filling up bar
+        //Set up the seek bar that handles filling the gas tank
+        //
         SeekBar fillTankSB = (SeekBar) findViewById(R.id.tankFillingSeekBar);
         fillTankSB.setOnSeekBarChangeListener(
                 new SeekBar.OnSeekBarChangeListener() {
@@ -32,14 +34,17 @@ public class MainActivity extends AppCompatActivity {
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                         if (gasTypeSelected) {
                             TextView actLitTV = (TextView) findViewById(R.id.actLitresTV);
-                            actLitTV.setText("" + progress + ".0");
                             TextView actCostTV = (TextView) findViewById(R.id.actCostTV);
-                            actCostTV.setText(Double.toString(progress * costPerLitre / 100.0));
+
+                            actLitTV.setText("" + progress + ".0");
+                            actCostTV.setText(String.format("%6.2f",
+                                    (progress * costPerLitre / 100.0)));
                         }
                         else {
                             Toast.makeText(MainActivity.this, "Pick a type of gas",
                                     Toast.LENGTH_SHORT).show();
                         }
+                        progressOfFill = progress; //Move to instance variable, to track
                     }
 
                     @Override
@@ -71,6 +76,13 @@ public class MainActivity extends AppCompatActivity {
 
         costPerLitre = REG_COST_P_L;
         gasTypeSelected = true;
+
+        //update price
+        TextView numLitresTV = (TextView) findViewById(R.id.actLitresTV);
+        TextView actCostTV = (TextView) findViewById(R.id.actCostTV);
+        numLitresTV.setText("" + progressOfFill);
+        actCostTV.setText(String.format("%6.2f",
+                (progressOfFill * costPerLitre / 100.0)));
     }//regGas
 
     /**
@@ -89,6 +101,13 @@ public class MainActivity extends AppCompatActivity {
 
         costPerLitre = MIDGRADE_COST_P_L;
         gasTypeSelected = true;
+
+        //update price
+        TextView numLitresTV = (TextView) findViewById(R.id.actLitresTV);
+        TextView actCostTV = (TextView) findViewById(R.id.actCostTV);
+        numLitresTV.setText("" + progressOfFill);
+        actCostTV.setText(String.format("%6.2f",
+                (progressOfFill * costPerLitre / 100.0)));
     }//midGradeGas
 
     /**
@@ -107,5 +126,12 @@ public class MainActivity extends AppCompatActivity {
 
         costPerLitre = PREMIUM_COST_P_L;
         gasTypeSelected = true;
+
+        //update price
+        TextView numLitresTV = (TextView) findViewById(R.id.actLitresTV);
+        TextView actCostTV = (TextView) findViewById(R.id.actCostTV);
+        numLitresTV.setText("" + progressOfFill);
+        actCostTV.setText(String.format("%6.2f",
+                (progressOfFill * costPerLitre / 100.0)));
     }//midGradeGas
 }
