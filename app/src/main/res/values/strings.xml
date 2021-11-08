@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GasPump</string>
+    <string name="app_name">Gas Pump</string>
     <string name="regular_mess">Regular\n Grade</string>
     <string name="mid_grade_mess"> Mid\nGrade</string>
     <string name="premium_mess">Premium\n Grade</string>
