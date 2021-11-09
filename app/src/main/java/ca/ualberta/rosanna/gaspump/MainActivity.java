@@ -126,8 +126,7 @@ public class MainActivity extends AppCompatActivity {
         TextView numLitresTV = (TextView) findViewById(R.id.actLitresTV);
         TextView actCostTV = (TextView) findViewById(R.id.actCostTV);
         numLitresTV.setText(String.format("%6.1f", progressOfFill));
-        actCostTV.setText(String.format("%6.2f",
-                (progressOfFill * costPerLitre / 100.0)));
+        actCostTV.setText(String.format("%6.2f", (progressOfFill * costPerLitre / 100.0)));
     }//regGas
 
     /**
@@ -153,8 +152,7 @@ public class MainActivity extends AppCompatActivity {
         TextView numLitresTV = (TextView) findViewById(R.id.actLitresTV);
         TextView actCostTV = (TextView) findViewById(R.id.actCostTV);
         numLitresTV.setText(String.format("%6.1f", progressOfFill));
-        actCostTV.setText(String.format("%6.2f",
-                (progressOfFill * costPerLitre / 100.0)));
+        actCostTV.setText(String.format("%6.2f", (progressOfFill * costPerLitre / 100.0)));
     }//midGradeGas
 
     /**
@@ -180,7 +178,6 @@ public class MainActivity extends AppCompatActivity {
         TextView numLitresTV = (TextView) findViewById(R.id.actLitresTV);
         TextView actCostTV = (TextView) findViewById(R.id.actCostTV);
         numLitresTV.setText(String.format("%6.1f", progressOfFill));
-        actCostTV.setText(String.format("%6.2f",
-                (progressOfFill * costPerLitre / 100.0)));
+        actCostTV.setText(String.format("%6.2f", (progressOfFill * costPerLitre / 100.0)));
     }//midGradeGas
 }//end of class
